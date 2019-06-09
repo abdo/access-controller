@@ -1,4 +1,11 @@
 const a = require('./methods/a');
 const createRole = require('./methods/createRole');
 
-console.log(a('student'));
+createRole('student');
+a('student')
+  .can('post')
+  .to('you');
+
+a('student')
+  .can('post')
+  .from('you');
