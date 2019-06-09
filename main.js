@@ -10,4 +10,4 @@ a('student')
 
 a('student')
   .can('ha')
-  .from('you');
+  .from('/:you');

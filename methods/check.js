@@ -1,9 +1,11 @@
 const a = require('./a');
+const areUrlsCompatible = require('../helpers/areUrlsCompatible');
 
 const check = {
   checkedRole: {},
-  checkedAbility: {},
-  output: true, // default value
+  checkedAbility: {}, // { verb, url, condition }
+  output: true,
+  urlPairs: [],
 
   if: (name) => {
     check.checkedRole = a(name);
@@ -24,9 +26,28 @@ const check = {
     return check;
   },
 
-  to: (object) => {},
+  to: (url) => {
+    let urlPairs = '';
+    if (!check.checkedAbility.url) {
+      check.output = false;
+    } else {
+      urlPairs = areUrlsCompatible(url, check.checkedAbility.url);
+    }
 
-  from: (object) => check.to(object)
+    if (!urlPairs) {
+      check.output = false;
+    }
+
+    if (!check.checkedAbility.condition) {
+      return check.output;
+    }
+
+    check.urlPairs = urlPairs;
+
+    return check;
+  },
+
+  from: (url) => check.to(url)
 };
 
 module.exports = check;
