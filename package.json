@@ -1,0 +1,20 @@
+{
+  "name": "acl-specifier",
+  "version": "1.0.0",
+  "description": "This is an access controller that can be used by an API in order to limit access for specific roles",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdo-A/access-controller.git"
+  },
+  "keywords": [],
+  "author": "Abdelrahman Mohamadeen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdo-A/access-controller/issues"
+  },
+  "homepage": "https://github.com/Abdo-A/access-controller#readme"
+}
