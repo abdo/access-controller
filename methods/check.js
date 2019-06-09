@@ -5,10 +5,15 @@ const check = {
   checkedRole: {},
   checkedAbility: {}, // { verb, url, condition }
   output: true,
-  urlPairs: [],
+  urlPairs: {},
 
   if: (name) => {
     check.checkedRole = a(name);
+
+    // Initialization of variables
+    check.checkedAbility = {};
+    check.output = true;
+    check.urlPairs = {};
 
     return check;
   },
@@ -47,7 +52,13 @@ const check = {
     return check;
   },
 
-  from: (url) => check.to(url)
+  from: (url) => check.to(url),
+
+  when: (userAttributes) => {
+    console.log('check.urlPairs', check.urlPairs);
+    console.log('userAttributes', userAttributes);
+    return check.checkedAbility.condition(check.urlPairs, userAttributes);
+  }
 };
 
 module.exports = check;

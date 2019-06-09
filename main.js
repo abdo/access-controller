@@ -3,11 +3,23 @@ const check = require('./methods/check');
 const createRole = require('./methods/createRole');
 const areUrlsCompatible = require('./helpers/areUrlsCompatible');
 
-createRole('student');
-a('student')
-  .can('post')
-  .to('you');
+createRole('admin');
+createRole('user');
+createRole('guest');
 
-a('student')
-  .can('ha')
-  .from('/:you');
+a('admin')
+  .can('get')
+  .from('/users');
+
+a('admin')
+  .can('post')
+  .to('/users');
+
+a('user')
+  .can('post')
+  .to('/users/:userId/articles')
+  .when((params, user) => user.id === params.userId);
+
+a('guest')
+  .can('get')
+  .from('/articles');
