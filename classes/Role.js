@@ -17,6 +17,11 @@ class Role {
   from(object) {
     this.to(object);
   }
+
+  when(fn) {
+    this.abilities[this.abilities.length - 1].condition = fn;
+    return this;
+  }
 }
 
 module.exports = Role;
