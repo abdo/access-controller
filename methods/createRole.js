@@ -1,7 +1,9 @@
-import { saveRole, savedRoles } from './common/savedRoles';
-import Role from './classes/Role';
+const savedRoles = require('../common/savedRoles');
+const Role = require('../classes/Role');
 
 const createRole = (name) => {
-  const newRole = new Role('name');
-  saveRole(newRole);
+  const newRole = new Role(name);
+  savedRoles.saveRole(newRole);
 };
+
+module.exports = createRole;

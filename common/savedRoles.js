@@ -1,5 +1,10 @@
-export const savedRoles = [];
+const roles = [];
 
-export const saveRole = (role) => {
-  savedRoles.push(role);
+const saveRole = (role) => {
+  roles.push(role);
+};
+
+module.exports = {
+  roles,
+  saveRole
 };
