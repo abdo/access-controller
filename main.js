@@ -1,4 +1,5 @@
 const a = require('./methods/a');
+const check = require('./methods/check');
 const createRole = require('./methods/createRole');
 
 createRole('student');
@@ -7,5 +8,5 @@ a('student')
   .to('you');
 
 a('student')
-  .can('post')
+  .can('ha')
   .from('you');
