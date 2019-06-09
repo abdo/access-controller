@@ -7,6 +7,7 @@ const check = {
 
   if: (name) => {
     check.checkedRole = a(name);
+
     return check;
   },
 
@@ -14,12 +15,18 @@ const check = {
     const checkedAbility = check.checkedRole.abilities.find(
       (ability) => ability.verb === verb
     );
-    console.log(checkedAbility);
     if (!checkedAbility) {
       check.output = false;
+    } else {
+      check.checkedAbility = checkedAbility;
     }
+
     return check;
-  }
+  },
+
+  to: (object) => {},
+
+  from: (object) => check.to(object)
 };
 
 module.exports = check;
