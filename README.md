@@ -1,7 +1,7 @@
 ## This is an access controller that can be used by an API in order to limit access for specific roles
 
 ```
-import acl from 'acl';
+import acl from 'acl-specifier';
 
 // create different roles
 acl.createRole('employee');
@@ -9,7 +9,7 @@ acl.createRole('teacher');
 acl.createRole('student');
 
 // set access rules for each role
-import { a, an } from 'acl';
+import { a, an } from 'acl-specifier';
 // teacher can list all papers
 a('teacher').can('get').from('/papers');
 // teacher can create a paper
@@ -21,7 +21,7 @@ user.id === params.paperId);
 an('employee').can('get').from('/papers');
 
 // check
-import { check } from 'acl';
+import { check } from 'acl-specifier';
 check.if('teacher').can('post').to('/papers'); // true
 check.if('teacher').can('patch').to('/papers'); // false
 check.if('student').can('post').to('/papers/10').when({ id: 10 }); // true
