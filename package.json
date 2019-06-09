@@ -1,6 +1,6 @@
 {
   "name": "acl-specifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is an access controller that can be used by an API in order to limit access for specific roles",
   "main": "main.js",
   "scripts": {
