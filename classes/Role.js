@@ -15,7 +15,7 @@ class Role {
   }
 
   from(url) {
-    this.to(url);
+    return this.to(url);
   }
 
   when(fn) {
